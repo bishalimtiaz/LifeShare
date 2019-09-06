@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "153045965966",
+    "firebase_url": "https://lifeshare-dac82.firebaseio.com",
+    "project_id": "lifeshare-dac82",
+    "storage_bucket": "lifeshare-dac82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153045965966:android:1dd2ba6a8eda134e",
+        "android_client_info": {
+          "package_name": "com.blz.prisoner.lifeshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153045965966-mf400kq10a8fmc06mle8kiest11je27a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blz.prisoner.lifeshare",
+            "certificate_hash": "379ae9c1462d8347dbc4596ba041ffa7a4cd7d53"
+          }
+        },
+        {
+          "client_id": "153045965966-rl044hg5snf2dppmkp621oua3d59h5if.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByNGk0clgLx8mDsdJ7qO9od5QaIhE5ss4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153045965966-rl044hg5snf2dppmkp621oua3d59h5if.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

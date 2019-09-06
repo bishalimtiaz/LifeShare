@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+
+        android:id="@+id/a_pos"
+        android:title="@string/a_pos"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/a_neg"
+        android:title="@string/a_neg"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/b_pos"
+        android:title="@string/b_pos"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/b_neg"
+        android:title="@string/b_neg"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ab_pos"
+        android:title="@string/ab_pos"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ab_neg"
+        android:title="@string/ab_neg"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/o_pos"
+        android:title="@string/o_pos"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/o_neg"
+        android:title="@string/o_neg"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/list_all"
+        android:title="@string/list_all"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout"
+        app:showAsAction="never"/>
+</menu>

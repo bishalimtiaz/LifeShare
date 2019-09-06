@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Informations"
+    android:background="@drawable/profile_backgroud">
+
+    <include
+        android:id="@+id/customToolbar"
+        layout="@layout/custom_ttolbar"/>
+
+    <TextView
+        android:id="@+id/notText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customToolbar"
+        android:layout_marginTop="258dp"
+        android:fontFamily="@font/courgette_regular"
+        android:gravity="center_horizontal"
+        android:text="Not Donated Yet"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/notText"
+        android:visibility="visible"/>
+
+
+
+</RelativeLayout>
