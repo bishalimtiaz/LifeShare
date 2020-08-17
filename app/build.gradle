@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.blz.prisoner.lifeshare"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 1

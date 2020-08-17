@@ -11,4 +11,6 @@
 
     <color name="mycolor">#520029</color>
     <color name="notification_color">#ff0000</color>
+    <color name="sv_primary">#3F5AA6</color>
+    <color name="black">#000000</color>
 </resources>

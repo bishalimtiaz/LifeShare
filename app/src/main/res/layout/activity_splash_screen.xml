@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen"
-    android:background="#520029">
+    tools:context=".SplashScreen">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -24,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/lobster_regular"
         android:text="LifeShare"
-        android:textColor="#ffffff"
+        android:textColor="@color/sv_primary"
         android:textSize="30sp"
         android:textStyle="bold" />
 </RelativeLayout>
