@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -53,7 +54,10 @@ public class SignUpActivity2 extends AppCompatActivity {
 
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
-
+    private String fullname, password, birthday, myBloodGroup, lattitude, longitude, address, subLocality, throughFare,locality,subAdminArea, area,age;
+    private String canGive_A_Pos, canGive_AB_Pos, canGive_A_Neg, canGive_AB_Neg, canGive_B_Pos, canGive_B_Neg, canGive_O_Pos, canGive_O_Neg;
+    private String gender="";
+    private String deviceToken;
 
 
     @Override
@@ -69,7 +73,7 @@ public class SignUpActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                userData.gender="male";
+                gender="male";
                 male.setBackgroundResource(R.drawable.gender_button_selected);
                 female.setBackgroundResource(R.drawable.gender_button);
                 male.setEnabled(false);
@@ -81,7 +85,7 @@ public class SignUpActivity2 extends AppCompatActivity {
         female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userData.gender="female";
+                gender="female";
                 female.setBackgroundResource(R.drawable.gender_button_selected);
                 male.setBackgroundResource(R.drawable.gender_button);
                 female.setEnabled(false);
@@ -98,7 +102,7 @@ public class SignUpActivity2 extends AppCompatActivity {
 
                 if (validate()){
                     phoneNumber = ccp.getFullNumberWithPlus();
-                    userData.phone = phoneNumber;
+
                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                     DatabaseReference userref = firebaseDatabase.getReference("Users");
 
@@ -203,7 +207,7 @@ public class SignUpActivity2 extends AppCompatActivity {
     private void setUpView(){
         male = findViewById(R.id.male);
         female = findViewById(R.id.female);
-        userData = new UserData();
+
         phoneText = findViewById(R.id.phoneText);
         codeText = findViewById(R.id.codeText);
         SignUp = findViewById(R.id.SignUp);
@@ -219,79 +223,79 @@ public class SignUpActivity2 extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        userData.fullName = extras.getString("fullName");
-        userData.password = extras.getString("password");
-        userData.birthday = extras.getString("birthday");
-        userData.bloodGroup = extras.getString("bloodGroup");
+        fullname = extras.getString("fullName");
+        password = extras.getString("password");
+        birthday = extras.getString("birthday");
+        myBloodGroup = extras.getString("bloodGroup");
         bloodGroup = extras.getString("bloodGroup");
-        userData.lattitude = extras.getString("lattitude");
-        userData.longitude = extras.getString("longitude");
-        userData.address = extras.getString("address");
-        userData.subLocality = extras.getString("subLocality");
-        userData.throughFare = extras.getString("throughfare");
-        userData.locality = extras.getString("locality");
-        userData.subAdminArea = extras.getString("subAdminArea");
-        userData.area = extras.getString("area");
-        userData.age = extras.getString("age");
+        lattitude = extras.getString("lattitude");
+        longitude = extras.getString("longitude");
+        address = extras.getString("address");
+        subLocality = extras.getString("subLocality");
+        throughFare = extras.getString("throughfare");
+        locality = extras.getString("locality");
+        subAdminArea = extras.getString("subAdminArea");
+        area = extras.getString("area");
+        age = extras.getString("age");
 
 
         if (bloodGroup.equals("A+")){
 
-            userData.canGive_A_Pos = "yes";
-            userData.canGive_AB_Pos = "yes";
+            canGive_A_Pos = "yes";
+            canGive_AB_Pos = "yes";
         }
 
         if (bloodGroup.equals("A-")){
 
-            userData.canGive_A_Neg = "yes";
-            userData.canGive_A_Pos = "yes";
-            userData.canGive_AB_Neg = "yes";
-            userData.canGive_AB_Pos = "yes";
+            canGive_A_Neg = "yes";
+            canGive_A_Pos = "yes";
+            canGive_AB_Neg = "yes";
+            canGive_AB_Pos = "yes";
         }
 
         if (bloodGroup.equals("B+")){
 
-            userData.canGive_B_Pos = "yes";
-            userData.canGive_AB_Pos = "yes";
+            canGive_B_Pos = "yes";
+            canGive_AB_Pos = "yes";
         }
 
         if (bloodGroup.equals("B-")){
 
-            userData.canGive_B_Neg = "yes";
-            userData.canGive_B_Pos = "yes";
-            userData.canGive_AB_Neg = "yes";
-            userData.canGive_AB_Pos = "yes";
+            canGive_B_Neg = "yes";
+            canGive_B_Pos = "yes";
+            canGive_AB_Neg = "yes";
+            canGive_AB_Pos = "yes";
         }
 
         if (bloodGroup.equals("AB+")){
 
-            userData.canGive_AB_Pos= "yes";
+            canGive_AB_Pos= "yes";
         }
 
         if (bloodGroup.equals("AB-")){
 
-            userData.canGive_AB_Pos = "yes";
-            userData.canGive_AB_Neg = "yes";
+            canGive_AB_Pos = "yes";
+            canGive_AB_Neg = "yes";
         }
 
         if (bloodGroup.equals("O+")){
 
-            userData.canGive_O_Pos = "yes";
-            userData.canGive_A_Pos = "yes";
-            userData.canGive_B_Pos = "yes";
-            userData.canGive_AB_Pos = "yes";
+            canGive_O_Pos = "yes";
+            canGive_A_Pos = "yes";
+            canGive_B_Pos = "yes";
+            canGive_AB_Pos = "yes";
         }
 
         if (bloodGroup.equals("O-")){
 
-            userData.canGive_O_Pos = "yes";
-            userData.canGive_A_Pos = "yes";
-            userData.canGive_B_Pos = "yes";
-            userData.canGive_AB_Pos = "yes";
-            userData.canGive_O_Neg = "yes";
-            userData.canGive_AB_Neg = "yes";
-            userData.canGive_B_Neg = "yes";
-            userData.canGive_A_Neg = "yes";
+            canGive_O_Pos = "yes";
+            canGive_A_Pos = "yes";
+            canGive_B_Pos = "yes";
+            canGive_AB_Pos = "yes";
+            canGive_O_Neg = "yes";
+            canGive_AB_Neg = "yes";
+            canGive_B_Neg = "yes";
+            canGive_A_Neg = "yes";
         }
 
 
@@ -311,8 +315,8 @@ public class SignUpActivity2 extends AppCompatActivity {
                             String s = FirebaseInstanceId.getInstance().getToken();
 
                             userId =user.getUid();
-                            userData.userId=userId;
-                            userData.deviceToken=s;
+
+                            deviceToken=s;
 
                             sendUserData();
 
@@ -338,8 +342,16 @@ public class SignUpActivity2 extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference();
+        userData = new UserData(fullname,password,birthday,myBloodGroup,gender,phoneNumber,"yes",lattitude,longitude,subLocality,throughFare,locality,subAdminArea
+        ,area,address,age,canGive_A_Pos,canGive_A_Neg,canGive_B_Pos,canGive_B_Neg,canGive_AB_Pos,canGive_AB_Neg,canGive_O_Pos,canGive_O_Neg,userId,deviceToken
+        );
 
-        myRef.child("Users").child(userId).setValue(userData);
+        myRef.child("Users").child(userId).setValue(userData).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("Sign Up Failure",String.valueOf(e));
+            }
+        });
 
         /*myRef.child("Users").push().setValue(userData);*/
     }
@@ -349,9 +361,9 @@ public class SignUpActivity2 extends AppCompatActivity {
 
         boolean result=false;
         String phone = phoneText.getText().toString();
-        String gn = userData.gender;
 
-        if (gn.equals("")){
+
+        if (gender.equals("")){
             Toast.makeText(SignUpActivity2.this,"Please Select your Gender",Toast.LENGTH_SHORT).show();
         }
 

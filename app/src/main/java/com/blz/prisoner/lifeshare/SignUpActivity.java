@@ -50,9 +50,10 @@ public class SignUpActivity extends AppCompatActivity  implements DatePickerDial
 
         setupView();
 
-        bloodgrp = getResources().getStringArray(R.array.Blood_group);
+        //bloodgrp = getResources().getStringArray(R.array.Blood_group);
 
-        ArrayAdapter<String>  adapter = new ArrayAdapter<String>(SignUpActivity.this,R.layout.spiner_item_lyout,R.id.txtItem,bloodgrp);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(SignUpActivity.this,R.array.Blood_group,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         blood.setAdapter(adapter);
 
         blood.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
